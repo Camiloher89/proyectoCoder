@@ -615,7 +615,7 @@ footer {
 /* --------------------------- responsive complejo -------------------------- */
 @media(max-width: 900px) {
     .contenido-slider>img {
-        widht: 15.625rem;
+        width: 15.625rem;
     }
 
     .contenido-slider>div {
