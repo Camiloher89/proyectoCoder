@@ -1,0 +1,84 @@
+@import "../variables";
+
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 350px;
+    margin: 20px;
+
+    .cara {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: .9s;
+
+    }
+
+    .frente {
+        transform: perspective(600px)rotateY(0deg);
+        box-shadow: 0 5px 10px #000;
+
+        img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .frente {
+
+
+        h3 {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 45px;
+            color: #fff;
+            background: rgba(0, 0, 0, .4);
+            text-align: center;
+            text-transform: uppercase;
+        }
+    }
+
+    .atras {
+        transform: perspective(600px)rotateY(180deg);
+        background: $negro1;
+        padding: 15px;
+        color: #f3f3f3;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        box-shadow: 0 5px 10px #000;
+
+
+        h3 {
+            font-size: 20px;
+            margin-top: 20px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        p {
+            letter-spacing: 1px;
+        }
+    }
+
+
+    &:hover {
+
+        .frente {
+            transform: perspective(600px)rotateY(180deg);
+        }
+
+        .atras {
+            transform: perspective(600px)rotateY(360deg);
+        }
+
+    }
+}

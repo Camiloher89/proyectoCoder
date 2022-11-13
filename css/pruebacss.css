@@ -1,55 +1,3 @@
-.card {
-  position: relative;
-  width: 300px;
-  height: 350px;
-  margin: 20px; }
-  .card .cara {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: .9s; }
-  .card .frente {
-    transform: perspective(600px) rotateY(0deg);
-    box-shadow: 0 5px 10px #000; }
-    .card .frente img {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover; }
-  .card .frente h3 {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 45px;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.4);
-    text-align: center;
-    text-transform: uppercase; }
-  .card .atras {
-    transform: perspective(600px) rotateY(180deg);
-    background: #130d21;
-    padding: 15px;
-    color: #f3f3f3;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-    box-shadow: 0 5px 10px #000; }
-    .card .atras h3 {
-      font-size: 20px;
-      margin-top: 20px;
-      letter-spacing: 2px;
-      text-transform: uppercase; }
-    .card .atras p {
-      letter-spacing: 1px; }
-  .card:hover .frente {
-    transform: perspective(600px) rotateY(180deg); }
-  .card:hover .atras {
-    transform: perspective(600px) rotateY(360deg); }
-
 * {
   margin: 0;
   padding: 0;
@@ -57,7 +5,6 @@
   text-decoration: none;
   font-family: Verdana, Geneva, Tahoma, sans-serif; }
 
-/* ---------------------------------- mixin --------------------------------- */
 /* ------------------------------ banner animado --------------------------------- */
 .banner {
   display: flex;
@@ -179,6 +126,7 @@ header {
   font-weight: 600; }
 
 .boton-inscribite {
+  color: white;
   border: 1px solid #5EE6A9;
   padding: 10px 30px;
   margin-top: 40px;
@@ -186,8 +134,7 @@ header {
   margin-right: auto;
   align-self: baseline;
   transition: all 0.8s;
-  border-radius: 5px;
-  color: white; }
+  border-radius: 5px; }
 
 .boton-inscribite:hover {
   background: #68b391; }
@@ -233,23 +180,25 @@ header {
   margin-top: 20px;
   flex-direction: column;
   align-items: center; }
-  .contenido-central h1 {
-    margin-bottom: 30px;
-    color: #e1f4d1;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-left: auto;
-    margin-right: auto; }
-  .contenido-central p {
-    margin-bottom: 30px;
-    color: white;
-    font-weight: 300;
-    padding: 0 50px;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
-    letter-spacing: 1px;
-    text-align: justify; }
+
+.contenido-central h1 {
+  margin-bottom: 30px;
+  color: #e1f4d1;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-left: auto;
+  margin-right: auto; }
+
+.contenido-central p {
+  margin-bottom: 30px;
+  color: white;
+  font-weight: 300;
+  padding: 0 50px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  letter-spacing: 1px;
+  text-align: justify; }
 
 /* ----------------------------- estilos footer ----------------------------- */
 footer {
@@ -271,25 +220,29 @@ footer {
   display: flex;
   flex-direction: column;
   padding: 40px; }
-  .box-footer .contamos {
-    max-width: 350px;
-    margin-top: 20px;
-    font-weight: 500;
-    color: #7a7a7a;
-    font-size: 18px; }
-  .box-footer h3 {
-    margin-bottom: 30px;
-    color: #4d4d5c;
-    font-weight: 700;
-    text-transform: uppercase; }
-  .box-footer a {
-    color: #4d4d5c;
-    padding: 0 10px;
-    transition: 0.4s;
-    margin-top: 15px;
-    font-weight: 600; }
-    .box-footer a:hover {
-      color: #68b391; }
+
+.box-footer .contamos {
+  max-width: 350px;
+  margin-top: 20px;
+  font-weight: 500;
+  color: #7a7a7a;
+  font-size: 18px; }
+
+.box-footer h3 {
+  margin-bottom: 30px;
+  color: #4d4d5c;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+.box-footer a {
+  color: #4d4d5c;
+  padding: 0 10px;
+  transition: 0.4s;
+  margin-top: 15px;
+  font-weight: 600; }
+
+.box-footer a:hover {
+  color: #68b391; }
 
 /* ---------------------------- estilo copyryght ---------------------------- */
 .box-copyright {
@@ -316,11 +269,76 @@ footer {
   min-height: 100vh;
   background: #8f979a; }
 
+.card {
+  position: relative;
+  width: 300px;
+  height: 350px;
+  margin: 20px; }
+
+.card .cara {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: .9s; }
+
+.card .frente {
+  transform: perspective(600px) rotateY(0deg);
+  box-shadow: 0 5px 10px #000; }
+
+.card .frente img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; }
+
+.card .frente h3 {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 45px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.4);
+  text-align: center;
+  text-transform: uppercase; }
+
+.card .atras {
+  transform: perspective(600px) rotateY(180deg);
+  background: #130d21;
+  padding: 15px;
+  color: #f3f3f3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  box-shadow: 0 5px 10px #000; }
+
+.card .atras h3 {
+  font-size: 20px;
+  margin-top: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase; }
+
+.card .atras p {
+  letter-spacing: 1px; }
+
+.card:hover .frente {
+  transform: perspective(600px) rotateY(180deg); }
+
+.card:hover .atras {
+  transform: perspective(600px) rotateY(360deg); }
+
 /* ----------------------------- estilos premios ---------------------------- */
 .wrapper-general {
   background-color: #130d21;
   display: grid;
-  grid-template-areas: "campeon campeon text-campeon" "text-subcampeon sub-campeon sub-campeon" "tercero tercero text-tercero" "text-goleador goleador goleador" "valla valla text-valla"; }
+  grid-template-areas: "campeon campeon text-campeon"
+ "text-subcampeon sub-campeon sub-campeon"
+ "tercero tercero text-tercero"
+ "text-goleador goleador goleador"
+ "valla valla text-valla"; }
 
 .campeon {
   grid-area: campeon; }
@@ -378,6 +396,7 @@ footer {
   margin-bottom: 0.625rem; }
 
 .boton-info {
+  color: #2E4053;
   border: 1px solid #5EE6A9;
   padding: 10px 30px;
   margin-top: 40px;
@@ -385,18 +404,27 @@ footer {
   margin-right: auto;
   align-self: baseline;
   transition: all 0.8s;
-  border-radius: 5px;
-  color: #2E4053; }
-  .boton-info:hover {
-    background: #68b391;
-    color: #fff; }
+  border-radius: 5px; }
+
+.boton-info:hover {
+  background: #68b391;
+  color: #fff; }
 
 /* ----------------------------- grid responsive ---------------------------- */
 @media (max-width: 760px) {
   .wrapper-general {
     grid-template-columns: 1fr;
     grid-template-rows: 9fr;
-    grid-template-areas: "text-campeon" "campeon" "text-subcampeon" "sub-campeon" "text-tercero" "tercero" "text-goleador" "goleador" "text-valla" "valla";
+    grid-template-areas: "text-campeon"
+ "campeon"
+ "text-subcampeon"
+ "sub-campeon"
+ "text-tercero"
+ "tercero"
+ "text-goleador"
+ "goleador"
+ "text-valla"
+ "valla";
     flex-wrap: nowrap; } }
 
 /* ---------------------------- estilos complejo ---------------------------- */
@@ -482,40 +510,44 @@ footer {
     width: 80%; } }
 
 /* -------------------------------- contacto -------------------------------- */
+.contenedor-contacto form {
+  width: 90%;
+  max-width: 40.625rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.3125rem 2.1875rem;
+  margin-top: 1.875rem;
+  padding-bottom: 1.875rem; }
+
+.contenedor-contacto form .form-label {
+  display: block;
+  font-size: 1.5625rem;
+  color: #dce7e0; }
+
+.contenedor-contacto form .form-imput {
+  background: rgba(237, 236, 245, 0.7);
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #1fbc43;
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1.25rem;
+  border-radius: 0.125rem;
+  color: #0b1f2c; }
+
+.contenedor-contacto .boton-enviar {
+  width: 100%;
+  outline: none;
+  background: #edf1f5;
+  font-size: 25px;
+  border-radius: 2px;
+  padding: 15px 0;
+  cursor: pointer;
+  color: #0b1f2c; }
+
 .contenedor-contacto {
   background-image: url(../fondosfutbol/imagen4.jpg);
   background-size: cover; }
-  .contenedor-contacto form {
-    width: 90%;
-    max-width: 40.625rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0.3125rem 2.1875rem;
-    padding-top: 1.875rem;
-    padding-bottom: 1.875rem; }
-    .contenedor-contacto form .form-label {
-      display: block;
-      font-size: 1.5625rem;
-      color: #dce7e0; }
-    .contenedor-contacto form .form-imput {
-      background: rgba(237, 236, 245, 0.7);
-      border: none;
-      outline: none;
-      border-bottom: 2px solid #1fbc43;
-      width: 100%;
-      padding: 0.75rem;
-      margin-bottom: 1.25rem;
-      border-radius: 0.125rem;
-      color: #0b1f2c; }
-  .contenedor-contacto .boton-enviar {
-    width: 100%;
-    outline: none;
-    background: #edf1f5;
-    font-size: 25px;
-    border-radius: 2px;
-    padding: 15px 0;
-    cursor: pointer;
-    color: #0b1f2c; }
 
 .header-form {
   margin-bottom: 10px; }
