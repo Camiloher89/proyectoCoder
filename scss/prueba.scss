@@ -1,3 +1,6 @@
+@import "./variables";
+@import "./componentes/card";
+
 * {
     margin: 0;
     padding: 0;
@@ -6,12 +9,25 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+/* ---------------------------------- mixin --------------------------------- */
+@mixin boton-base {
+    border: 1px solid $verde1;
+    padding: 10px 30px;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    align-self: baseline;
+    transition: all 0.8s;
+    border-radius: 5px;
+}
+
+
 /* ------------------------------ banner animado --------------------------------- */
 .banner {
     display: flex;
     height: 60px;
     width: 100%;
-    background-color: #130d21;
+    background-color: $negro1;
     overflow: hidden;
 }
 
@@ -76,7 +92,7 @@
 /* --------------------------------- header --------------------------------- */
 header {
     height: 100px;
-    background: #4d4d5c;
+    background: $gris1;
     padding: 0 50px;
     color: white;
     display: flex;
@@ -86,7 +102,7 @@ header {
 
 .logo {
     text-transform: uppercase;
-    color: #5EE6A9;
+    color: $verde1;
     font-weight: 200;
 }
 
@@ -112,7 +128,7 @@ header {
 .menu a:hover,
 .mostrar-menu:hover,
 .esconder-menu:hover {
-    color: #5EE6A9;
+    color: $verde1;
 }
 
 #check {
@@ -158,19 +174,12 @@ header {
 }
 
 .boton-inscribite {
+    @include boton-base;
     color: white;
-    border: 1px solid #5EE6A9;
-    padding: 10px 30px;
-    margin-top: 40px;
-    margin-left: auto;
-    margin-right: auto;
-    align-self: baseline;
-    transition: all 0.8s;
-    border-radius: 5px;
 }
 
 .boton-inscribite:hover {
-    background: #68b391;
+    background: $verde2;
 }
 
 /* ----------------------------- responsive menu ---------------------------- */
@@ -185,7 +194,7 @@ header {
         position: fixed;
         width: 100%;
         height: 100vh;
-        background: #4d4d5c;
+        background: $gris1;
         right: -100%;
         top: 0;
         text-align: center;
@@ -226,28 +235,30 @@ header {
     margin-top: 20px;
     flex-direction: column;
     align-items: center;
+
+    h1 {
+        margin-bottom: 30px;
+        color: $verde3;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    p {
+        margin-bottom: 30px;
+        color: white;
+        font-weight: 300;
+        padding: 0 50px;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+        letter-spacing: 1px;
+        text-align: justify;
+    }
+
 }
 
-.contenido-central h1 {
-    margin-bottom: 30px;
-    color: rgb(225, 244, 209);
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.contenido-central p {
-    margin-bottom: 30px;
-    color: white;
-    font-weight: 300;
-    padding: 0 50px;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
-    letter-spacing: 1px;
-    text-align: justify;
-}
 
 /* ----------------------------- estilos footer ----------------------------- */
 footer {
@@ -255,7 +266,7 @@ footer {
     padding: 50px 0px;
     background-image: url(../fondosfutbol/background-footer.svg);
     background-size: cover;
-    background-color: #130d21;
+    background-color: $negro1;
 }
 
 .contenedor-footer {
@@ -271,33 +282,35 @@ footer {
     display: flex;
     flex-direction: column;
     padding: 40px;
-}
 
-.box-footer .contamos {
-    max-width: 350px;
-    margin-top: 20px;
-    font-weight: 500;
-    color: #7a7a7a;
-    font-size: 18px;
-}
 
-.box-footer h3 {
-    margin-bottom: 30px;
-    color: #4d4d5c;
-    font-weight: 700;
-    text-transform: uppercase;
-}
+    .contamos {
+        max-width: 350px;
+        margin-top: 20px;
+        font-weight: 500;
+        color: #7a7a7a;
+        font-size: 18px;
+    }
 
-.box-footer a {
-    color: #4d4d5c;
-    padding: 0 10px;
-    transition: 0.4s;
-    margin-top: 15px;
-    font-weight: 600;
-}
+    h3 {
+        margin-bottom: 30px;
+        color: $gris1;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
 
-.box-footer a:hover {
-    color: #68b391;
+    a {
+        color: $gris1;
+        padding: 0 10px;
+        transition: 0.4s;
+        margin-top: 15px;
+        font-weight: 600;
+
+        &:hover {
+            color: $verde2;
+        }
+
+    }
 }
 
 /* ---------------------------- estilo copyryght ---------------------------- */
@@ -311,13 +324,13 @@ footer {
 
 .box-copyright p {
     margin-top: 20px;
-    color: #4d4d5c;
+    color: $gris1;
 }
 
 .box-copyright hr {
     border: none;
     height: 1px;
-    background-color: #4d4d5c;
+    background-color: $gris1;
 }
 
 /* ----------------------------- estilos torneos ---------------------------- */
@@ -330,82 +343,10 @@ footer {
     background: #8f979a;
 }
 
-.card {
-    position: relative;
-    width: 300px;
-    height: 350px;
-    margin: 20px;
-
-}
-
-.card .cara {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: .9s;
-
-}
-
-.card .frente {
-    transform: perspective(600px)rotateY(0deg);
-    box-shadow: 0 5px 10px #000;
-}
-
-.card .frente img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.card .frente h3 {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 45px;
-    color: #fff;
-    background: rgba(0, 0, 0, .4);
-    text-align: center;
-    text-transform: uppercase;
-}
-
-.card .atras {
-    transform: perspective(600px)rotateY(180deg);
-    background: #130d21;
-    padding: 15px;
-    color: #f3f3f3;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-    box-shadow: 0 5px 10px #000;
-}
-
-.card .atras h3 {
-    font-size: 20px;
-    margin-top: 20px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.card .atras p {
-    letter-spacing: 1px;
-}
-
-.card:hover .frente {
-    transform: perspective(600px)rotateY(180deg);
-}
-
-.card:hover .atras {
-    transform: perspective(600px)rotateY(360deg);
-}
 
 /* ----------------------------- estilos premios ---------------------------- */
 .wrapper-general {
-    background-color: #130d21;
+    background-color: $negro1;
     display: grid;
     grid-template-areas: "campeon campeon text-campeon"
         "text-subcampeon sub-campeon sub-campeon"
@@ -496,20 +437,13 @@ footer {
 }
 
 .boton-info {
+    @include boton-base;
     color: #2E4053;
-    border: 1px solid #5EE6A9;
-    padding: 10px 30px;
-    margin-top: 40px;
-    margin-left: auto;
-    margin-right: auto;
-    align-self: baseline;
-    transition: all 0.8s;
-    border-radius: 5px;
-}
 
-.boton-info:hover {
-    background: #68b391;
-    color: #fff;
+    &:hover {
+        background: $verde2;
+        color: #fff;
+    }
 }
 
 /* ----------------------------- grid responsive ---------------------------- */
@@ -597,7 +531,7 @@ footer {
 .contenido-slider a {
     color: #000;
     background-color: #f3f3f3;
-    border: 1px solid #5EE6A9;
+    border: 1px solid $verde1;
     padding: 0.625rem 1.875rem;
     margin-top: 2.5rem;
     margin-left: auto;
@@ -608,7 +542,7 @@ footer {
 }
 
 .contenido-slider a:hover {
-    background: #68b391;
+    background: $verde2;
     color: #fff;
 }
 
@@ -639,50 +573,51 @@ footer {
 }
 
 /* -------------------------------- contacto -------------------------------- */
-.contenedor-contacto form {
-
-    width: 90%;
-    max-width: 40.625rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0.3125rem 2.1875rem;
-    margin-top: 1.875rem;
-    padding-bottom: 1.875rem;
-}
-
-.contenedor-contacto form .form-label {
-    display: block;
-    font-size: 1.5625rem;
-    color: #dce7e0;
-}
-
-.contenedor-contacto form .form-imput {
-    background: rgba(237, 236, 245, 0.7);
-    border: none;
-    outline: none;
-    border-bottom: 2px solid #1fbc43;
-    width: 100%;
-    padding: 0.75rem;
-    margin-bottom: 1.25rem;
-    border-radius: 0.125rem;
-    color: #0b1f2c;
-
-}
-
-.contenedor-contacto .boton-enviar {
-    width: 100%;
-    outline: none;
-    background: #edf1f5;
-    font-size: 25px;
-    border-radius: 2px;
-    padding: 15px 0;
-    cursor: pointer;
-    color: #0b1f2c;
-}
-
 .contenedor-contacto {
     background-image: url(../fondosfutbol/imagen4.jpg);
     background-size: cover;
+
+    form {
+
+        width: 90%;
+        max-width: 40.625rem;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0.3125rem 2.1875rem;
+        padding-top: 1.875rem;
+        padding-bottom: 1.875rem;
+
+        .form-label {
+            display: block;
+            font-size: 1.5625rem;
+            color: #dce7e0;
+        }
+
+        .form-imput {
+            background: rgba(237, 236, 245, 0.7);
+            border: none;
+            outline: none;
+            border-bottom: 2px solid #1fbc43;
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1.25rem;
+            border-radius: 0.125rem;
+            color: #0b1f2c;
+        }
+
+    }
+
+    .boton-enviar {
+        width: 100%;
+        outline: none;
+        background: #edf1f5;
+        font-size: 25px;
+        border-radius: 2px;
+        padding: 15px 0;
+        cursor: pointer;
+        color: #0b1f2c;
+    }
+
 }
 
 .header-form {
