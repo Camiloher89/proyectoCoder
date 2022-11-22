@@ -1,3 +1,11 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif; }
+  
 .card {
   position: relative;
   width: 300px;
@@ -50,12 +58,6 @@
   .card:hover .atras {
     transform: perspective(600px) rotateY(360deg); }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-decoration: none;
-  font-family: Verdana, Geneva, Tahoma, sans-serif; }
 
 /* ---------------------------------- mixin --------------------------------- */
 /* ------------------------------ banner animado --------------------------------- */
@@ -248,7 +250,7 @@ header {
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
-    letter-spacing: 1px;
+    letter-spacing: 0.0625rem;
     text-align: justify; }
 
 /* ----------------------------- estilos footer ----------------------------- */
@@ -320,7 +322,11 @@ footer {
 .wrapper-general {
   background-color: #130d21;
   display: grid;
-  grid-template-areas: "campeon campeon text-campeon" "text-subcampeon sub-campeon sub-campeon" "tercero tercero text-tercero" "text-goleador goleador goleador" "valla valla text-valla"; }
+  grid-template-areas: "campeon campeon text-campeon"
+                        "text-subcampeon sub-campeon sub-campeon"
+                        "tercero tercero text-tercero"
+                        "text-goleador goleador goleador"
+                        "valla valla text-valla"; }
 
 .campeon {
   grid-area: campeon; }
@@ -396,7 +402,16 @@ footer {
   .wrapper-general {
     grid-template-columns: 1fr;
     grid-template-rows: 9fr;
-    grid-template-areas: "text-campeon" "campeon" "text-subcampeon" "sub-campeon" "text-tercero" "tercero" "text-goleador" "goleador" "text-valla" "valla";
+    grid-template-areas: "text-campeon"
+ "campeon"
+ "text-subcampeon"
+ "sub-campeon"
+ "text-tercero"
+ "tercero"
+ "text-goleador"
+ "goleador"
+ "text-valla"
+ "valla";
     flex-wrap: nowrap; } }
 
 /* ---------------------------- estilos complejo ---------------------------- */
@@ -523,3 +538,11 @@ footer {
 .form-titulo {
   text-transform: uppercase;
   color: #dce7e0; }
+.carousel-item img {
+  min-width: 336px;
+    max-width: 100%;
+    width: 100%;
+    min-height: 280px;
+    height: 500px;
+    object-fit: cover;
+}
