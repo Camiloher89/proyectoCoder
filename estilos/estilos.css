@@ -1,3 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif; }
+
 .card {
   position: relative;
   width: 300px;
@@ -49,13 +56,6 @@
     transform: perspective(600px) rotateY(180deg); }
   .card:hover .atras {
     transform: perspective(600px) rotateY(360deg); }
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-decoration: none;
-  font-family: Verdana, Geneva, Tahoma, sans-serif; }
 
 /* ---------------------------------- mixin --------------------------------- */
 /* ------------------------------ banner animado --------------------------------- */
@@ -523,3 +523,35 @@ footer {
 .form-titulo {
   text-transform: uppercase;
   color: #dce7e0; }
+
+a {
+  text-decoration: none; }
+
+.carousel-item img {
+  min-width: 336px;
+  max-width: 100%;
+  width: 100%;
+  min-height: 280px;
+  height: 500px;
+  object-fit: cover; }
+
+.text-b {
+  color: #0b1f2c;
+  text-transform: capitalize;
+  font-style: italic;
+  font-weight: bold; }
+
+.text-c {
+  color: #dce7e0;
+  text-transform: capitalize;
+  font-style: italic;
+  font-weight: bold; }
+
+.text-t {
+  color: #dbd7d7;
+  text-transform: capitalize;
+  font-style: italic;
+  font-weight: bold; }
+
+.text-t h5 {
+  color: #000; }
