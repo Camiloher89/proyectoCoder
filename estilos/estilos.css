@@ -248,8 +248,8 @@ header {
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
-    letter-spacing: 1px;
-    text-align: justify; }
+    letter-spacing: 0.0625rem;
+    text-align: center; }
 
 /* ----------------------------- estilos footer ----------------------------- */
 footer {
